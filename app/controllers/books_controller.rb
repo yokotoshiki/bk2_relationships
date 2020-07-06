@@ -4,16 +4,12 @@ before_action :authenticate_user!
 
   def show
     @book = Book.find(params[:id])
+    @book_new = Book.new
   end
 
   def index
     @books = Book.all
     @book = Book.new
-  end
-
-  def show
-    @book = Book.new
-    @book = Book.find(params[:id])
   end
 
   def create

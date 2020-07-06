@@ -10,6 +10,15 @@
 		<th>introduction</th>
 		<th><%= current_user.introduction %></th>
 	</tr>
+	<% @user ||= current_user %>
+	<tr>
+	 	<th>following</th>
+	 	<th> <%= link_to @user.followings.count,following_user_path(@user)  %></th>
+	</tr>
+	<tr>
+	 	<th>followers</th>
+	    <th><%= link_to @user.followers.count, followers_user_path(@user) %></th>
+	<tr>
 </table>
 
 <div class="row">

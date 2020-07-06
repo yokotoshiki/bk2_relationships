@@ -13,6 +13,17 @@
 					<tr>
 						<th>introduction</th>
 						<th><%= @user.introduction %></th>
+					 <% @user ||= current_user %>
+					 <tr>
+					 	<th>following</th>
+					 	<th> <%= @user.followings.count %></th>
+					 </tr>
+					 <tr>
+					 	<th>followers</th>
+					    <th><%= @user.followers.count %></th>
+					 <tr>
+					 <tr>
+					 <th><%= render 'follow_form', user:@user %></th>
 					</tr>
 				</table>
 
